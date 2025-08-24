@@ -22,12 +22,12 @@ public class AccountBalance {
            if(!cashback.isEmpty())
            {
               String str =   cashback.getFirst();
-               long timestp1 = Long.parseLong(str.split(" ")[1]);
-               int acc1 = Integer.parseInt(str.split(" ")[2]);
-               int amt1 = Integer.parseInt(str.split(" ")[3]);
-               if(timestp1 < timestp)
+               long timestp_cb = Long.parseLong(str.split(" ")[1]);
+               int acc_cb = Integer.parseInt(str.split(" ")[2]);
+               int amt_cb = Integer.parseInt(str.split(" ")[3]);
+               if(timestp_cb < timestp)
                {
-                   balances[acc1-1] += amt1;
+                   balances[acc_cb-1] += amt_cb;
                    cashback.removeFirst();
                }
            }
