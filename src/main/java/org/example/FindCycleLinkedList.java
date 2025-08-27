@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public  class FindCycleLinkedList {
@@ -8,7 +10,7 @@ public  class FindCycleLinkedList {
 
     public static boolean hasCycle(Node head) {
 
-        if(head == null)
+        /*if(head == null)
         {
             return false;
         }
@@ -26,8 +28,22 @@ public  class FindCycleLinkedList {
                 return true;
             }
         }
-        return false;
+        return false;*/
+        //Using Hash Set
 
+        Set<Node> set  = new HashSet<>();
+        Node current  = head;
+
+        while(current != null)
+        {
+
+            if(set.contains(current))
+                return true;
+
+             set.add(current);
+            current = current.next;
+        }
+        return false;
     }
 
 
